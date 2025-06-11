@@ -46,8 +46,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        // target: 'http://192.168.121.15:7999', // 鸿鑫本地
-        target: 'http://de.rohest.cn/gateway', // 地址
+        target: 'http://192.168.121.15:7999', // 本地
         changeOrigin: true, // 改变请求源头
         rewrite: (path) => path.replace(/^\/api/, '') // 重写路径
       },
