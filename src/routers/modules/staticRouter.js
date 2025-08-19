@@ -6,13 +6,13 @@ export const staticRouter = [
     path: '/',
     redirect:'/home/index',
   },
-  // {
-  //   path: "/layout",
-  //   name: "layout",
-  //   component: () => import("@/layouts/index.vue"),
+  {
+    path: "/layout",
+    name: "layout",
+    component: () => import("@/layouts/index.vue"),
   //   // component: () => import("@/layouts/indexAsync.vue"),
   //   // redirect: '/home/index',
-  //   children: [
+    children: [
 
       {
         path: '/home/index',
@@ -34,8 +34,8 @@ export const staticRouter = [
         path: "/:pathMatch(.*)*",
         component: () => import("_p/404.vue")
       }
-  //   ]
-  // },
+    ]
+  },
 ];
 
 /**

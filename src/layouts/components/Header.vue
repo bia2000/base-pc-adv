@@ -1,44 +1,47 @@
 <template>
   <div class="layout-header">
     <div class="layout-header-left space-x-5">
-      <side-menu />
-      <img :src="Bus.getAssetsFile('layout/homeLogo.png')" alt="" class="w-[180px]" />
+      <img
+        :src="Bus.getAssetsFile('vue.svg')"
+        alt=""
+        class="w-8"
+        @click="router.push({ name: 'home' })"
+      />
     </div>
     <div class="layout-header-right space-x-6">
-      <search />
-      <notice-item />
-      <Points v-if="userStore.token" />
-      <a-button shape="round" class="register-btn" @click="router.push({ name: 'rMethod' })" v-if="visible && !userStore.token">
-        {{ $t('login.signUp') }}
+      <a-button
+        shape="round"
+        class="register-btn"
+        @click="router.push({ name: 'rMethod' })"
+      >
+        12344
       </a-button>
     </div>
   </div>
 </template>
 <script setup>
-import SideMenu from './SideMenu'
-import NoticeItem from './NoticeItem'
-import Points from './Points'
-import Search from './Search'
-import { useUserStore } from '@/stores/modules/user'
-const userStore = useUserStore()
-const router = useRouter()
-const visible = ref(true)
+import { useUserStore } from "@/stores/modules/user";
+const userStore = useUserStore();
+const router = useRouter();
+const visible = ref(true);
 watch(
   () => router.currentRoute,
-  newVal => {
-    if (newVal) visible.value = !router.currentRoute.value.fullPath.includes('register')
+  (newVal) => {
+    if (newVal)
+      visible.value = !router.currentRoute.value.fullPath.includes("register");
   },
   {
-    deep: true
+    deep: true,
   }
-)
-onMounted(() => {})
+);
+onMounted(() => {});
 </script>
 <style lang="less" scoped>
 .layout-header {
   color: #fff;
   display: flex;
-  padding: 0 10%;
+  padding: 0 6%;
+  height: 100%;
   justify-content: space-between;
   &-left,
   &-right {
