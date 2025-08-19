@@ -42,6 +42,8 @@ onMounted(() => {});
   display: flex;
   padding: 0 6%;
   height: 100%;
+  background-color: rgb(255, 255, 255, 0.2);
+  backdrop-filter: blur(40px);
   justify-content: space-between;
   &-left,
   &-right {

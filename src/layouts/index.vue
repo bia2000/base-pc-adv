@@ -14,8 +14,8 @@
   </a-layout>
 </template>
 <script setup>
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 </script>
 <style lang="less" scoped>
 .ant-layout {
@@ -23,13 +23,13 @@ import Footer from './components/Footer'
   min-height: 100vh;
   min-width: 1000px;
   &-header {
-    background-color: #4c337d;
     padding: 0;
+    background: unset;
   }
   &-content {
     display: flex;
     justify-content: center;
-    background: url('_img/layout/bg.png') no-repeat;
+    background: url("_img/layout/bg.png") no-repeat;
     background-size: cover;
     background-position: center;
     padding: 0;
